@@ -29,7 +29,7 @@ library(topicmodels)
 lda_ans=LDA(person_dtm,k=3,control=list(seed=2023))
 # 读取词概率
 topic_term=tidy(lda_ans,matrix="beta")
-# 主题下频率最高5词
+# 主题下频率最高10词
 top_terms=topic_term %>% group_by(topic) %>% 
   top_n(10,beta) %>%
   ungroup() %>%
